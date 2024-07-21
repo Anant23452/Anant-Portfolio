@@ -1,3 +1,11 @@
+@font-face {
+    font-family: font1;
+    src: url(font/ethnocentric-rg-it.otf);
+}
+@font-face {
+    font-family: font2;
+    src: url(font/American\ Captain.otf);
+}
 *{
     margin:0;
     padding:0;
@@ -18,6 +26,7 @@
     height: 100vh;
    
     overflow: hidden;
+    /* display: none; */
 
 }
 /* navbar ki khumsurity */
@@ -143,11 +152,20 @@ padding: 33px 39px;
     display: flex;
     align-items: center;
     justify-content: baseline;
-    font-family: 'roboto',sans-serif;
+    font-family: font1;
     padding: 0 5vw;
     height: 5vw;
     transform:translateY(-5vw);
     cursor: pointer;
+  }
+  .frame>span>a{
+    text-decoration: none;
+    color: transparent;
+    -webkit-text-stroke: 1px  white;
+    /* border: 2px solid white; */
+  }
+  .frame>span>a:hover{
+    color: rgb(255, 75, 75);
   }
 
 .fly>.right{
@@ -179,7 +197,7 @@ padding: 33px 39px;
     overflow: hidden;
 }
 .social>h2, h4{
- font-family:'roboto',sans-serif;
+ font-family: font1;
  font-weight: 400;
  opacity: .6;
 }
@@ -194,7 +212,7 @@ padding: 33px 39px;
     display: flex;
     align-items: center;
     justify-content: baseline;
-    font-family: 'roboto',sans-serif;
+    font-family: font1;
     padding: 0 5vw;
     height: 5vw;
     cursor: pointer;
@@ -219,6 +237,7 @@ padding: 33px 39px;
     flex-direction: column;
     justify-content: center;
     position: relative;
+    font-family: font1;
 
 }
 .free{
@@ -243,7 +262,8 @@ padding: 33px 39px;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-size: 3vw;
+    font-size: 2vw;
+    font-family: font1;
 }
 video {
     height: 100vh;
@@ -265,11 +285,12 @@ video {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border-bottom: 1px solid rgb(255, 255, 255);
+    /* border-bottom: .1px solid rgb(255, 255, 255); */
     color: #fefefe;
 }
 .featwork{
-    font-size: 10vw;
+    font-size: 5vw;
+    font-family: font1;
     
 
 }
@@ -289,6 +310,7 @@ video {
     align-items: center;
     justify-content: space-evenly;
     /* border-bottom: .5px solid white; */
+    /* display: none; */
     
 }
 .project1{
@@ -297,9 +319,13 @@ video {
     /* background-color: aqua; */
     position: relative;
     overflow: hidden;
+    font-family: font1;
+    transition: all .8s ease-in-out;
 }
 .project1:hover{
     filter: grayscale();
+    box-shadow: 2px 4px 16px 2px white;
+
 }
 
 .project1 >.mask>img{
@@ -311,9 +337,9 @@ video {
 
 }
 .project1>span{
-    font-size: 2vw;
+    font-size: 1.2vw;
     background-color: white;
-    color: black;
+    color: rgb(0, 0, 0);
     border-radius: 4vh;
     position: absolute;
     bottom: 10px;
@@ -330,7 +356,7 @@ video {
 .project1>.arrow2{
     width: 5vw;
   height: 10vh;
-  background-color: rgb(237, 237, 237);
+  /* background-color: rgb(237, 237, 237); */
   bottom: 10px;
   position: absolute;
   left: 28vw;
@@ -342,82 +368,52 @@ video {
 }
 
 .project2{
-    width: 30vw;
-    height: 40vh;
+   
+    width: 32vw;
+    height: 77vh;
     /* background-color: rgb(120, 206, 45); */
     /* overflow: hidden; */
 }
 .sec{
     width: 100%;
     height: 100%;
+   
     /* background-color: red; */
  }
+ .sec>img{
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: contain;
+ }
 
- div.elem{
-position: relative;
-width: 100%;
- }
- .elem>img{
-  width: 100%;
-  opacity: 0;
-  animation: an 4s linear infinite;
-  position: absolute;
-  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-  object-fit: cover;
-  object-position: center;
- }
- 
- .elem>img:nth-child(2){
-    animation-delay: 1s;
- }
- .elem>img:nth-child(3){
-    animation-delay: 2s;
- }
- .elem>img:nth-child(4){
-    animation-delay: 3s;
- }
- .elem>img:nth-child(5){
-    animation-delay: 4s;
- }
- @keyframes an {
-    0%{
-        opacity: 1;
-    }
-    20%{
-        opacity: 1;
-    }
-    21%{
-        opacity: 0;
-    }
-    40%{
-        opacity: 0;
-    }
-    60%{
-        opacity: 0;
-    }
-    80%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 0;
-    }
- }
+
  .box3{
     width: 100vw;
     background-color: #00000081;
+    /* display: none; */
     
     /* background-color: red; */
+    padding-bottom: 2vh;
  }
+
+
+
+ /* skills page styling ke liye  */
+
+
+
+
  .box4{
-    border-top: 1px solid white;
+    /* border-top: 1px solid white; */
     /* background-color: rgb(174, 34, 34); */
     width: 100vw;
-    height: 100vh;
+    height: 200vh;
     color: white;
-    margin-top: 13vh;
+    /* margin-top: 13vh; */
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     flex-direction: column;
     /* display: none; */
    
@@ -440,9 +436,32 @@ width: 100%;
     align-items: center;
     justify-content: space-evenly;
 }
-.one>img{
-    width: 20%;
-    height: 80%;
+.one-1{
+    width: 10vw;
+    height: 30vh;
+    overflow: hidden;
+    /* background-color: green; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    font-family: font1;
+    text-align: center;
+}
+.one>h3{
+    font-family: font1;
+    border: 1px solid white;
+    
+}
+.one-1img{
+    width: 100%;
+    height: 50%;
+}
+.one-1img>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 .two{
     /* background-color: red; */
@@ -450,12 +469,59 @@ width: 100%;
     height: 50%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: start;
+    gap: 5vw;
+    padding: 20px;
+}
+.two>h3{
+    font-family: font1;
+    border: 1px solid white;
 }
 .two>img{
     width: 20%;
     height: 80%;
 }
+.three{
+    /* background-color: aquamarine; */
+}
+.photo{
+    width: 11vw;
+}
+.four{
+    /* background-color: #dada; */
+    width: 100vw;
+    height:51vh;
+    position: relative;
+   box-shadow:  2px 2px 14px 2px rgb(97, 94, 94);
+  
+
+}
+.sec1{
+    height: 50vh;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: 1;
+    opacity: 2;
+
+}
+.overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(7, 7, 7, 0.276);
+    position: absolute;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.overlay>h2{
+    font-size: 9vw;
+    font-family:font1 ;
+    color: rgba(255, 255, 255, 0.753);
+}
+
+/* About page ke styling ke liye  */
 .box5{
     width: 100vw;
     height: 100vh;
@@ -463,6 +529,8 @@ width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: font1;
+    /* display: none; */
 }
 .box5-left{
     width: 50vw;
@@ -486,16 +554,36 @@ width: 100%;
     border: 2px solid white;
     overflow: hidden;
     color: white;
+    position: relative;
+    /* transition:  0.9s ease-in-out; Smooth transition */
 }
 .left-1>img{
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: scale-down;
+    position: absolute;
     object-position: center;
+    transition: 0.5s ease-in-out; /* Smooth transition */
 }
-.left-1>h1{
-    font-family: 'roboto',sans-serif;
-    color: white;
+.left-1:hover>.my{
+opacity: 0;
+}
+.bird{
+    opacity: 0;
+}
+.left-1:hover>.bird{
+    opacity: 1;
+}
+
+.left2>h1{
+   -webkit-text-stroke: 1px white;
+    color: transparent;
+    transition: all .8s cubic-bezier(0.075, 0.82, 0.165, 1);
+    /* transition: 0.3s ease; Smooth transition */
+
+}
+.left2>h1:hover{
+    color: red;
 }
 .box5-right{
     width: 50vw;
@@ -517,5 +605,137 @@ font-size: 5vw;
     padding: 23px ;
     font-size: 2vw;
     text-align: center;
+    font-family:font2 ;
+    line-height: 6vh;
+    letter-spacing: 2px;
 
+}
+
+/* footer section  */
+.box6{
+    /* background-color: orange; */
+    width: 100vw;
+    height: 50vh;
+
+}
+.footer {
+    /* background-color: #333; */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 80%;
+    border-top: 2px solid white;
+}
+.foot-left{
+    /* background-color: blue; */
+    width: 50%;
+    height: 100%;
+
+}
+.left-f{
+    /* background-color: yellow; */
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.left-f>p{
+font-family: font1;
+font-size: 3.5vw;
+}
+.left-2{
+    /* background-color: salmon; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.icon{
+    /* background-color: black; */
+    width: 10vw;
+    height: 20vh;
+    overflow: hidden;
+   
+
+}
+.icon>a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s ease-in-out;
+}
+.icon>a>img{
+    width: 100%;
+    height: 100px;
+    object-position: center;
+    object-fit: cover;
+   
+    
+}
+
+
+.icon>a>.tele{
+    width: 80%;
+    height: 12vh
+}
+.icon>a:hover{
+   
+    transform: scale(1.2);
+
+}
+.icon>a>insta{
+    width: 90%;
+  height: 16vh
+}
+
+
+.foot-right{
+    /* background-color: green; */
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.boximg{
+    /* background-color: red; */
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.boximg>img{
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+    object-position: center;
+    transition: all .6s ease-in-out;
+}
+.boximg:hover>img{
+    transform: scale(1.1);
+}
+
+
+.copy{
+    width: 100vw;
+    height: 20%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.copy>p{
+    opacity: .8;
+    font-size: 1.5vw;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    color: white;
 }

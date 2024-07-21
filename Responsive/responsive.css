@@ -1,0 +1,33 @@
+@media (max-width:600px) {
+    .page1{
+        /* background-color: blue; */
+
+        height: 54vh;
+    }
+  
+   
+    .work{
+        background-color: red;
+    }
+    .arrow > svg {
+        opacity: .6;
+        width: 50px;
+        margin-top: -32px;
+      }
+      .box1{
+        height: 54vh;
+    }
+    .project1 {
+        width: 35vw;
+        height: 33vh;
+       
+      }
+      .skills {
+        
+        margin-top: 36px;
+      }
+    
+}
+@media ( min-width:500px){
+  
+}

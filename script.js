@@ -156,8 +156,7 @@ gsap.from(".nav",{
 
 })
 
-
-Shery.textAnimate(".page1-child1>h1" /* Element to target.*/, {
+  Shery.textAnimate(".page1-child1>h1" /* Element to target.*/, {
     //Parameters are optional.
     style: 1,
     y: 10,
@@ -199,7 +198,7 @@ Shery.textAnimate(".page1-child2>h1" /* Element to target.*/, {
     ease: "cubic-bezier(0.23, 1, 0.320, 1)",
     duration: 1,
   });
-  Shery.imageEffect(".one>img , .two>img", {
+  Shery.imageEffect(" .one-1img>img", {
     style: 3,
     debug: false,
     config: 
@@ -226,3 +225,22 @@ Shery.textAnimate(".page1-child2>h1" /* Element to target.*/, {
     ease: "cubic-bezier(0.23, 1, 0.320, 1)",
     duration: 1,
   });
+
+var one =document.querySelector(".one");
+gsap.from(".one",{
+  y:"60px",
+  duration:2,
+  opacity:0,
+  stagger:.1,
+  ease:Power3
+
+})
+var one =document.querySelector(".two");
+gsap.from(".two",{
+  y:"40px",
+  duration:2,
+  opacity:0,
+  stagger:.1,
+  ease:Power3
+
+})
