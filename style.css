@@ -6,6 +6,14 @@
     font-family: font2;
     src: url(font/American\ Captain.otf);
 }
+@font-face {
+    font-family: font3;
+    src: url(FoundersGrotesk-Light.otf);
+}
+@font-face {
+    font-family:font4 ;
+    src: url(FoundersGroteskXCond-Bold.otf);
+}
 *{
     margin:0;
     padding:0;
@@ -15,16 +23,95 @@
       width:100%;
       height:100%;
   }
+
+   /* loading page animation  */
+
+
+  .loading{
+    background-color: rgb(0, 0, 0);
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999999;
+    position: absolute;
+
+  }
+  .loading-item-1{
+    width: 100%;
+    height: 20vh;
+    background-color: rgb(0, 0, 0);
+    position: relative;
+  }
+  .loading-item-1>h1,.loading-item-3>h2{
+    font-size: 7vw;
+    text-transform: uppercase;
+    font-family: font2;
+    color: #fff;
+    position: absolute;
+    bottom: -80%;
+  }
+  .loading-item-3>h2{
+  
+    top: 65%;
+  }
+  /* loading animation  */
+  .loading-item-2{
+    width: 100%;
+    height: 60vh;
+    background-color: rgb(0, 0, 0);
+    
+  }
+  .infinite-container{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .infinite-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    animation: scroll 20s linear infinite;
+    gap: 10px;
+  }
+  .infinite-content>img{
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    margin: 0 10px;
+    flex-shrink: 0;
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-40%);
+    }
+  }
+  .loading-item-3{
+    width: 100%;
+    height: 20vh;
+    background-color: rgb(0, 0, 0);
+    
+    position: relative;
+  }
+  
+
+
+
+
 .main{
 
    background-color: black;
+   position: relative;
 
 }
 
 .box1{
     width: 100vw;
     height: 100vh;
-   
     overflow: hidden;
     /* display: none; */
 
@@ -38,6 +125,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 0px 60px;
+    position: absolute;
+    z-index: 999999;
 }
 .logo{
     width: 60px;
@@ -63,13 +152,14 @@
     border-radius: 5px;
     cursor: pointer;
 }
-.menu>.menu-little{
+.menu .menu-little{
     width: 60px;
     height: 60px;
     position: relative;
+    /* background-color: blueviolet; */
     
 }
-.menu>.menu-little>span{
+.menu>.menu-little span{
     position: absolute;
     background-color: #fff;
     width: 50px;
@@ -82,41 +172,40 @@
     transition: all ease .5s;
 }
 .menu>.menu-little>.line-1{
-    /* transform: translate(-50%,-50%) rotate(-45deg); */
-    width: 0;
-    
+    width: 100%;
+    transform: translate(-50%, -10px);
 }
 .menu>.menu-little>.line-2{
-    transform: translate(-50%,-50%) rotate(-45deg);
-    
+    transform: translate(-50%, -50%);
 }
 .menu>.menu-little>.line-3{
-    
-    transform: translate(-50%,-50%) rotate(45deg);
-}
-.openmenu>.menu-little>.line-2{
-    transform: translate(-50%,-15px);
-}
-.openmenu>.menu-little>.line-3{
-    transform: translate(-50%,9px);
+    transform: translate(-50%, 10px);
 }
 .openmenu>.menu-little>.line-1{
-    transform: translate(-50%,-50%);
+    width: 0;
+}
+.openmenu>.menu-little>.line-2{
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.openmenu>.menu-little>.line-3{
+    transform: translate(-50%, -50%) rotate(45deg);
 }
 .fly{
     width: 100vw;
     height: 100vh;
    font-size: 42px;
-   display: flex;
+   display: none;
    align-items: center;
    justify-content: center;
-/* background-image: linear-gradient(rgb(236, 171, 182),white,rgb(242, 144, 242));
- */
- background: transparent;
+ background-color: black;
+ position: relative;
+ z-index: 99999;
+ 
+ /* background: transparent; */
     /* position: absolute; */
-    display: none;
+    /* display: none; */
     color: #fff;
-    background-color: #dadada3d;
+    
 
     
 }
@@ -165,7 +254,7 @@ padding: 33px 39px;
     /* border: 2px solid white; */
   }
   .frame>span>a:hover{
-    color: rgb(255, 75, 75);
+    color: rgb(255, 255, 255);
   }
 
 .fly>.right{
@@ -221,10 +310,31 @@ padding: 33px 39px;
     width: 100%;
     height: 100%;
     display: flex;
-    /* background-color: red; */
+    background-color: rgb(223, 103, 103);
     color: #fff;
+    position: relative;
+    z-index: 99999;
+    /* display: none; */
+    background-image: url('https://images.unsplash.com/photo-1544941224-f7f40bb3b3c8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.page1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(8px);
+    z-index: -1;
     
 }
+
 
 
 .page1-child1{
@@ -239,6 +349,44 @@ padding: 33px 39px;
     position: relative;
     font-family: font1;
 
+}
+.text-content{
+    width: 100%;
+    height: 50%;
+    /* background-color: antiquewhite; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.free3{
+    margin-top: 30vh;
+    font-size: 5vw;
+}
+.gif-content{
+   
+    /* background-color: blue; */
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.coding-animation{
+    width: 30vw;
+    height: 30vh;
+    box-shadow: 0 0 20px rgba(5, 4, 4, 0.5),
+                inset 0 0 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.coding-animation>img{
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+    transition: filter 0.3s ease-in-out;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .free{
     position: absolute;
@@ -265,6 +413,27 @@ padding: 33px 39px;
     font-size: 2vw;
     font-family: font1;
 }
+.ui-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    /* background-color: green; */
+}
+.gif-container{
+    box-shadow: 0px 0px 10px 4px rgb(14, 12, 12);
+    width: 100%;
+    /* height: 100%;
+    background-color: red; */
+}
+.gif-container>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 video {
     height: 100vh;
     width: 100%;
@@ -273,129 +442,60 @@ video {
     z-index: -1;
 
 }
-.box2{
-    width: 100vw;
-    height: 150vh;
-    background-color:black;
-    z-index: 999;
-    /* display: none; */
-}
-.work{
-    /* background-color: thistle; */
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    /* border-bottom: .1px solid rgb(255, 255, 255); */
-    color: #fefefe;
-}
-.featwork{
-    font-size: 5vw;
-    font-family: font1;
-    
+/* second page  styling ke liye mtlb projects */
 
-}
-.arrow{
-    font-size: 6vw;
-    width: 40px;
-    height: 40px;
-}
-.arrow>svg{
-    opacity: .6;
-}
-.work2{
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0, 0, 0);
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    /* border-bottom: .5px solid white; */
+.m-sec{
+    width: 100vw;
+    height: 300vh;
     /* display: none; */
     
 }
-.project1{
-    width: 35vw;
-    height: 90vh;
-    /* background-color: aqua; */
-    position: relative;
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    gap: 4px;
+    padding: 16px;
     overflow: hidden;
-    font-family: font1;
-    transition: all .8s ease-in-out;
+    z-index: 99;
+   
 }
-.project1:hover{
-    filter: grayscale();
-    box-shadow: 2px 4px 16px 2px white;
-
+.grid-item {
+    /* background-color: #3498db; */
+    border-radius: 4px;
+    overflow: hidden;
+    grid-column: var(--c);
+    grid-row: var(--r);
+    z-index: 999;
+    /* padding: 20px; */
 }
-
-.project1 >.mask>img{
+.grid-item img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    object-position: center;
-    width: 100%;
-    height: 100%;
-
-
 }
-.project1>span{
-    font-size: 1.2vw;
-    background-color: white;
-    color: rgb(0, 0, 0);
-    border-radius: 4vh;
-    position: absolute;
-    bottom: 10px;
-    left: 2vw;
-    width: 13vw;
-    height: 10vh;
-    text-align: center;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-   
-}
-.project1>.arrow2{
-    width: 5vw;
-  height: 10vh;
-  /* background-color: rgb(237, 237, 237); */
-  bottom: 10px;
-  position: absolute;
-  left: 28vw;
-  cursor: pointer;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.project2{
-   
-    width: 32vw;
-    height: 77vh;
-    /* background-color: rgb(120, 206, 45); */
-    /* overflow: hidden; */
-}
-.sec{
-    width: 100%;
-    height: 100%;
-   
-    /* background-color: red; */
- }
- .sec>img{
-    width: 100%;
-    height: 100%;
-    object-position: center;
-    object-fit: contain;
- }
-
-
- .box3{
+.em{
+    pointer-events: none;
+    /* background-color: antiquewhite; */
     width: 100vw;
-    background-color: #00000081;
-    /* display: none; */
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    font-family: font2;
     
-    /* background-color: red; */
-    padding-bottom: 2vh;
- }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -406,9 +506,9 @@ video {
 
  .box4{
     /* border-top: 1px solid white; */
-    /* background-color: rgb(174, 34, 34); */
+    background-color: rgb(0, 0, 0);
     width: 100vw;
-    height: 200vh;
+    height: 150vh;
     color: white;
     /* margin-top: 13vh; */
     display: flex;
@@ -416,15 +516,44 @@ video {
     /* justify-content: center; */
     flex-direction: column;
     /* display: none; */
+    position: relative;
+    /* 
+    z-index: 99999; is used to control the stacking order of elements.
+    It places this element (.box4) on top of other elements with lower z-index values.
+    This ensures .box4 appears above most other elements on the page, even if they overlap.
+    */
+    z-index: 99999;
+   
    
  }
-.skills{
-    font-size: 4vw;
+.skills {
+    display: flex;
+    justify-content: center;
+    font-size: 7vw;
+    font-family: font2;
+    width: 100%;
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
 }
+
+.skills::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: white;
+    z-index: 1;
+}
+
+
 .skill{
     /* background-color: aqua; */
     width: 100%;
-    height: 90vh;
+    height: 70vh;
     padding-top: 5px;
 
 }
@@ -487,135 +616,146 @@ video {
 .photo{
     width: 11vw;
 }
-.four{
-    /* background-color: #dada; */
-    width: 100vw;
-    height:51vh;
-    position: relative;
-   box-shadow:  2px 2px 14px 2px rgb(97, 94, 94);
-  
 
-}
-.sec1{
-    height: 50vh;
-    width: 100%;
-    object-fit: cover;
-    position: fixed;
-    z-index: 1;
-    opacity: 2;
-
-}
-.overlay{
-    width: 100%;
-    height: 100%;
-    background-color: rgba(7, 7, 7, 0.276);
-    position: absolute;
-    z-index: 9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.overlay>h2{
-    font-size: 9vw;
-    font-family:font1 ;
-    color: rgba(255, 255, 255, 0.753);
-}
 
 /* About page ke styling ke liye  */
 .box5{
     width: 100vw;
     height: 100vh;
-    /* background-color: yellow; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: font1;
+    background-color: aqua;
+    font-family: font3;
+    position: relative;
+  
+    
     /* display: none; */
 }
-.box5-left{
-    width: 50vw;
-    height: 100vh;
-    /* background-color: red; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    color: white;
+.box5 .top,
+.box5 .bottom {
+    width: 100%;
+    height: 50vh;
+    position: absolute;
+    
 }
-.left-1{
-    width: 50%;
-    height: 50%;
-    /* background-color: rgb(146, 146, 188); */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 50%;
-    border: 2px solid white;
+
+.box5 .top {
+    top: 0;
+    /* This CSS property positions the element at the very top of its containing element. Here's a detailed explanation:
+    
+    1. The 'top' property is used for positioning elements.
+    2. Setting it to '0' means there's no gap between the top edge of this element and the top edge of its parent.
+    3. This only works when the element has a positioning value like 'absolute', 'relative', or 'fixed'.
+    4. In this case, it's likely used with 'position: absolute' (set on .box5 .top) to align the top section flush with the top of its container.
+    5. This ensures the top section starts exactly at the top of the box5 element, with no space above it.
+    */
+    background-color: #fffdfd;
     overflow: hidden;
-    color: white;
-    position: relative;
-    /* transition:  0.9s ease-in-out; Smooth transition */
+   
+    color: #000000;
 }
-.left-1>img{
+
+.box5 .center {
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+}
+
+.box5 .bottom {
+    bottom: 0;
+    /* This positions the element at the bottom of its containing element */
+    background-color: #ffffff;
+    overflow: hidden;
+}
+.box5 h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 20vw;
+    font-family: font4;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: rgb(0, 0, 0);
+}
+#top-h{
+    bottom: 50%;
+}
+#bottom-h{
+    top:10%    ;
+}
+.center video{
     width: 100%;
     height: 100%;
-    object-fit: scale-down;
-    position: absolute;
-    object-position: center;
-    transition: 0.5s ease-in-out; /* Smooth transition */
+    object-fit: cover;
 }
-.left-1:hover>.my{
-opacity: 0;
-}
-.bird{
-    opacity: 0;
-}
-.left-1:hover>.bird{
-    opacity: 1;
-}
-
-.left2>h1{
-   -webkit-text-stroke: 1px white;
-    color: transparent;
-    transition: all .8s cubic-bezier(0.075, 0.82, 0.165, 1);
-    /* transition: 0.3s ease; Smooth transition */
-
-}
-.left2>h1:hover{
-    color: red;
-}
-.box5-right{
-    width: 50vw;
-    height: 100vh;
-    /* background-color: greenyellow; */
+.about-content {
+    width: 100%;
+    height: 100%;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    padding: 2rem;
     flex-direction: column;
+}
 
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 2rem;
 }
-.box5-right>h1{
-font-size: 5vw;
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-.box5-right>p{
-    /* background-color: aquamarine; */
-    color: white;
-    padding: 23px ;
-    font-size: 2vw;
+
+.profile-info {
     text-align: center;
-    font-family:font2 ;
-    line-height: 6vh;
-    letter-spacing: 2px;
-
+   font-family: font4;
+    font-weight: 600;
 }
+
+.profile-info h2 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    /* background-color: antiquewhite; */
+}
+
+.profile-info p {
+    font-size: 2rem;
+    line-height: 2;
+    margin-bottom: 1rem;
+    /* background-color: beige; */
+    font-family: font2;
+    font-weight: 300;
+    margin: 1vw 4vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* footer section  */
 .box6{
-    /* background-color: orange; */
+    background-color: rgb(0, 0, 0);
     width: 100vw;
     height: 50vh;
+    position: relative;
+    z-index: 99999;
+    /* display: none; */
 
 }
 .footer {
