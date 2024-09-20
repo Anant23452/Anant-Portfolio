@@ -1,33 +1,167 @@
-@media (max-width:600px) {
-    .page1{
-        /* background-color: blue; */
 
-        height: 54vh;
-    }
-  
+
+/* 
+
+   To troubleshoot, try the following:
+   1. Verify your device's viewport width is within the specified range.
+   2. Use more specific selectors or !important (sparingly).
+   3. Ensure the classes exist in your HTML.
+   4. Clear your browser cache.
+   5. Use browser dev tools to inspect the elements and see which styles are applied. */
+
+/* Example of more specific selectors: */
+@media screen and (min-width: 488px) and (max-width: 700px)  {
+
+  body * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body .menu{
+    /* background-color: blue !important; */
+  }
+  body .box1{
+    background-color: rgb(6, 3, 3) !important;
    
-    .work{
-        background-color: red;
-    }
-    .arrow > svg {
-        opacity: .6;
-        width: 50px;
-        margin-top: -32px;
-      }
-      .box1{
-        height: 54vh;
-    }
-    .project1 {
-        width: 35vw;
-        height: 33vh;
-       
-      }
-      .skills {
-        
-        margin-top: 36px;
-      }
+    height: 88vh;
+  }
+  body .page1 {
+    width: 100% !important;
+    height: 40vh !important;
+    background-image: none !important;
+    display: block !important;
+  }
+  body .page1-child1{
+    /* background-color: green; */
+    width: 100vw;
+  }
+  .free{
+    position: absolute;
+  color: white;
+  font-size: 2vw !important;
+  top: 14vh !important;
+  left: 4vw !important;
+  }
+  .free2{
+    position: absolute;
+  color: white;
+  font-size: 3vw !important;
+  top: 15vh !important;
+  }
+  .free3{
+    position: absolute;
+  color: white;
+  font-size: 9vw !important;
+  top: -13vh !important;
+  
+  }
+  body .page1-child2{
+    background-color: rgb(1, 2, 1);
+    width: 100vw;
+  }
+  
+  .gif-content{
+    margin-top: 45vh !important;
+  }
+  .coding-animation {
+    width: 58vw !important;
+    height: 23vh !important;
+    box-shadow: 0 0 20px rgba(5, 4, 4, 0.5), inset 0 0 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+  body .gif{
+    display: none;
+    position: absolute;
+    top: 20vh !important;
+  }
+  .ui-text{
+    font-size: 3.5vw !important;
+    top: 10vh !important;
+    position: relative;
+  }
+  .ui-text>h1{
+    font-size: 8vw !important;
     
-}
-@media ( min-width:500px){
+    top: -18vh !important;
+  }
+  .elem{
+    width: 32vw;
+  height: 32vh;
+  }
+  .skills{
+    padding-top: 0;
+  }
+  .web{
+    display: flex !important;
+    flex-direction: column !important;
+
+  }
+  .skill-item{
+    display: flex !important;
+    flex-direction: row !important;
+    width: 51vw !important;
+  }
+  .skill-img-container{
+    display: none;
+  }
+  .photo {
+    width: 30vw !important;
+  }
+  
+    .photo {
+      width: 30vw !important;
+    }
+    .two{
+      display: flex;
+      flex-direction: column !important;
+    }
+  .one-1img{
+display: none;
+  }
+  .one-1{
+    width: 40vh !important;
+  }
+  .icon {
+    
+    width: 16vw !important;
+    height: 10vh !important;
+   
+  }
+  .box5 .top {
+   
+    /* background-color: #cd4b4b !important; */
+    
+  }
+  .box5 .bottom {
+    /* background-color: #f8b6b6 !important; */
+  }
+  .box5 h1 {
+    position: absolute;
+    top: 73% !important;
+    
+  }
+  .box5 .bottom h1{
+    top: -1% !important;
+    
+  }
+  .fly{
+    background-color: rgb(0, 0, 0);
+  }
+
+
+.frame span {
+  
+  font-family: font1;
+  padding: 0 5vw;
+  height: -4vw;
   
 }
+.social > h4 {
+  margin: -18px 32px !important;
+  font-size: 1.8vw !important;
+}
+
+
+} /* Added closing brace here */

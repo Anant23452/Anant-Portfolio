@@ -8,6 +8,27 @@ Shery.mouseFollower({
 // Function to handle the loading animation
 function handleLoading() {
   const loadingElement = document.querySelector('.loading');
+  const bodyElement = document.querySelector('body');
+  
+  // Create a percentage display element
+  const percentageDisplay = document.querySelector(".percentage")
+  
+  // Disable scrolling
+  bodyElement.style.overflow = 'hidden';
+  
+  // Scroll to the top of the page
+  window.scrollTo(0, 0);
+  
+  // Function to update the percentage display
+  function updatePercentage() {
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolledHeight = window.scrollY;
+    const percentage = Math.min((scrolledHeight / totalHeight) * 100, 100);
+    percentageDisplay.textContent = `Loading... ${Math.round(percentage)}%`;
+  }
+  
+  // Update the percentage display on scroll
+  window.addEventListener('scroll', updatePercentage);
   
   // Wait for all content to load
   window.addEventListener('load', () => {
@@ -16,7 +37,14 @@ function handleLoading() {
       height: 0,
       duration: 1, // Adjust duration as needed
       ease: "power2.inOut",
+      onUpdate: function() {
+        // Update the percentage display during the animation
+        const progress = this.progress() * 100;
+        percentageDisplay.textContent = `Loading... ${Math.round(progress)}%`;
+      },
       onComplete: () => {
+        // Enable scrolling after loading animation
+        bodyElement.style.overflow = 'auto';
         // Optional: Remove the loading element from the DOM after animation
         loadingElement.style.display = 'none';
       }
@@ -34,32 +62,6 @@ handleLoading();
 //   el: document.querySelector('.main'),
 //   smooth: true
 // });
-
-function loader(){
-document.addEventListener("DOMContentLoaded",function(){
-  var scrollContent =document.querySelector(".infinite-content")
-  
-  scrollContent.innerHTML+=scrollContent.innerHTML;
- 
-})
-}
-loader()
-
-const  text1 =document.querySelector(".loading-item-1>h1");
-const  text2 =document.querySelector(".loading-item-3>h2");
-gsap.to(text1,{
-  y:-100,
-  duration:1,
-  ease:Power1.easeIn,
-  
-});
-gsap.to(text2,{
-  y:-100,
-  duration:1,
-  ease:Power3
-});
-
-
 
 
 
@@ -169,28 +171,64 @@ function movement() {
 }
 movement();
 
+const time=gsap.timeline()
+function loader(){
+  document.addEventListener("DOMContentLoaded",function(){
+    var scrollContent =document.querySelector(".infinite-content")
+    
+    scrollContent.innerHTML+=scrollContent.innerHTML;
+   
+  },"end")
+  const  text1 =document.querySelector(".loading-item-1>h1");
+    const  text2 =document.querySelector(".loading-item-3>h2");
+  time.to(text1,{
+      y:-100,
+      duration:.5,
+      stagger:.1,
+      ease:Power1.easeIn,
+      
+    });
+    time.to(text2,{
+      y:-100,
+      duration:.5,
+      stagger:.1,
+      ease:Power3
+    },"end");
+    
+  }
+  loader()
+  
+  
+  
+  
 
 
 
-
-gsap.from(".nav", {
+time.from(".nav", {
   y: "-20px",
   duration: 2,
   opacity: 0,
   stagger: .1,
   ease: Power3
 
-})
-
-Shery.textAnimate(".free1" /* Element to target.*/, {
-  //Parameters are optional.
-  style: 1,
-  y: 10,
-  delay: 0.1,
+},"end2")
+time.from(".free1,.free2,.free3,.gif-content", {
+  y: "-20px",
   duration: 2,
-  ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-  multiplier: 0.1,
-});
+  opacity: 0,
+  stagger: 1,
+  ease: Power3
+
+},"end2")
+time.from(".gif-container,.ui-text", {
+  y: "-20px",
+  duration: 2,
+  opacity: 0,
+  stagger: 1,
+  ease: Power3
+
+},"end2")
+
 Shery.textAnimate(".free1,free2,free3" /* Element to target.*/, {
   //Parameters are optional.
   style: 1,
@@ -200,10 +238,40 @@ Shery.textAnimate(".free1,free2,free3" /* Element to target.*/, {
   ease: "cubic-bezier(0.23, 1, 0.320, 1)",
   multiplier: 0.1,
 });
+Shery.textAnimate(".f" /* Element to target.*/, {
+  //Parameters are optional.
+  style: 1,
+  y: 10,
+  delay: 0.1,
+  duration: 2,
+  ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+  multiplier: 0.1,
+});
 
 
-
-Shery.imageEffect(" .gif-image,", {
+Shery.imageMasker(".project1>img" /* Element to target.*/, {
+  //Parameters are optional.
+  mouseFollower: true,
+  text: "anant",
+  ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+  duration: 1,
+});
+Shery.makeMagnet(".project1" /* Element to target.*/, {
+  //Parameters are optional.
+  ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+  duration: 1,
+});
+Shery.makeMagnet(".project2" /* Element to target.*/, {
+  //Parameters are optional.
+  ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+  duration: 1,
+});
+Shery.makeMagnet(".featwork,.free,.free2,.free3,.ui-text" /* Element to target.*/, {
+  //Parameters are optional.
+  ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+  duration: 1,
+});
+Shery.imageEffect(" .one-1img>img", {
   style: 3,
   debug: false,
   config:
@@ -211,7 +279,7 @@ Shery.imageEffect(" .gif-image,", {
     { "uFrequencyX": { "value": 30.53, "range": [0, 100] }, "uFrequencyY": { "value": 12, "range": [0, 100] }, "uFrequencyZ": { "value": 10, "range": [0, 100] }, "geoVertex": { "range": [1, 64], "value": 22.16 }, "zindex": { "value": "996999", "range": [-9999999, 9999999] }, "aspect": { "value": 1.2107835350858929 }, "ignoreShapeAspect": { "value": true }, "shapePosition": { "value": { "x": 0, "y": 0 } }, "shapeScale": { "value": { "x": 0.5, "y": 0.5 } }, "shapeEdgeSoftness": { "value": 0, "range": [0, 0.5] }, "shapeRadius": { "value": 0, "range": [0, 2] }, "currentScroll": { "value": 0 }, "scrollLerp": { "value": 0.07 }, "gooey": { "value": false }, "infiniteGooey": { "value": false }, "growSize": { "value": 4, "range": [1, 15] }, "durationOut": { "value": 1, "range": [0.1, 5] }, "durationIn": { "value": 1.5, "range": [0.1, 5] }, "displaceAmount": { "value": 0.5 }, "masker": { "value": true }, "maskVal": { "value": 1.12, "range": [1, 5] }, "scrollType": { "value": 0 }, "noEffectGooey": { "value": true }, "onMouse": { "value": 0 }, "noise_speed": { "value": 0.2, "range": [0, 10] }, "metaball": { "value": 0.2, "range": [0, 2] }, "discard_threshold": { "value": 0.5, "range": [0, 1] }, "antialias_threshold": { "value": 0.002, "range": [0, 0.1] }, "noise_height": { "value": 0.5, "range": [0, 2] }, "noise_scale": { "value": 10, "range": [0, 100] } }
 
 });
-Shery.imageEffect(".gif-image", {
+Shery.imageEffect(".images", {
   style: 3,
   /*optional parameters
   these parameter dose not applies to custom scroll trigger callback */
@@ -220,12 +288,12 @@ Shery.imageEffect(".gif-image", {
   touchSpeed: 6,
   damping: 7,
 });
-Shery.makeMagnet(".free1,free2,free3" /* Element to target.*/, {
+Shery.makeMagnet(".page1-child1>h1" /* Element to target.*/, {
   //Parameters are optional.
   ease: "cubic-bezier(0.23, 1, 0.320, 1)",
   duration: 1,
 });
-Shery.makeMagnet(".text1,text2,text3" /* Element to target.*/, {
+Shery.makeMagnet(".page1-child2>h1" /* Element to target.*/, {
   //Parameters are optional.
   ease: "cubic-bezier(0.23, 1, 0.320, 1)",
   duration: 1,
@@ -264,7 +332,7 @@ document.addEventListener("DOMContentLoaded", function() {
       end: "100% 50%",
       scrub: 1,
       pin: true,
-      markers: true,
+      // markers: true,
     }
   });
 
@@ -275,6 +343,8 @@ document.addEventListener("DOMContentLoaded", function() {
     bottom: "-50%",
   }, 0);
 });
+
+
 
 
 
