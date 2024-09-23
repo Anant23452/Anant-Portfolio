@@ -87,8 +87,8 @@
     top: -18vh !important;
   }
   .elem{
-    width: 32vw;
-  height: 32vh;
+    width: 23vw;
+    height: 15vh;
   }
   .skills{
     padding-top: 0;
@@ -190,6 +190,19 @@ display: none;
 .social > h4 {
   margin: -18px 32px !important;
   font-size: 1.8vw !important;
+}
+.foot-right{
+  /* background-color: red !important; */
+  .boximg{
+    width: 22vh;
+    height: 17vh;
+  }
+  .boximg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 }
 
 
